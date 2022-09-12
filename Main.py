@@ -63,15 +63,15 @@ class Evaluate:
     """
     # Write your code here
     value = True
-
+    
     valid = ['+','-','*','/']
-
+    
     for char in expression:
         if char.isdigit or char in valid:
             continue
         else:
             value = False
-
+    
     return value
 
 
@@ -83,16 +83,16 @@ class Evaluate:
     Returns:
       The result of evaluated postfix expression.
     """
-
+    
     # Write your code here
-
+    
     for char in expression:
         if char.isdigit():
             self.push(char)
         else:
             b = int(self.pop())
             a = int(self.pop())
-
+            
             if char == "+":
                 result = a + b
             elif char == "-":
@@ -101,9 +101,9 @@ class Evaluate:
                 result = a * b
             elif char == '/':
                 result = a / b
-
+            
             self.push(result)
-
+    
     return int(self.stack[0])
 
 
